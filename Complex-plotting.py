@@ -12,6 +12,8 @@ from mayavi import mlab
 import numpy as np
 import colorsys
 
+fName = 'tan(z)'
+
 ########## Modify things in this section: ##########
 def f(z):
     return tan(z) # Examples: sin(z),  np.absolute(z), np.exp(1/z), np.exp(-1*np.power(z,2)), 
@@ -207,17 +209,17 @@ fView = View(Item('fScene', editor=SceneEditor(scene_class=MayaviScene),height=2
             Group(
                     '_', 'fInclSphereArg', 'fInclSphereMag', 'fInclPlaneArg', 'fInclPlaneMag',
                  ),
-            resizable=True, title='f(z) - as defined under the line "def f(z):" '
+            resizable=True, title=fName
             )
 
 myaviModel = MyaviModel()
-myaviModel.idInclSphereArg = True
-myaviModel.idInclSphereMag = True
+myaviModel.idInclSphereArg = False
+myaviModel.idInclSphereMag = False
 myaviModel.idInclPlaneArg = True
-myaviModel.idInclPlaneMag = True
-myaviModel.fInclSphereArg = True
-myaviModel.fInclSphereMag = True
+myaviModel.idInclPlaneMag = False
+myaviModel.fInclSphereArg = False
+myaviModel.fInclSphereMag = False
 myaviModel.fInclPlaneArg = True
-myaviModel.fInclPlaneMag = True
+myaviModel.fInclPlaneMag = False
 myaviModel.edit_traits(view=idView)
 myaviModel.configure_traits(view=fView)
