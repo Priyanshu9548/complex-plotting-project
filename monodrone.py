@@ -36,8 +36,9 @@ x = np.linspace(xmin, xmax, num=dim)
 y = np.linspace(ymin, ymax, num=dim)
 xx,yy = np.meshgrid(x,y)
 # z = xx + 1j*yy
-z = np.sqrt(xx**2 + 1j*yy**2)
+# z = np.sqrt(xx**2 + 1j*yy**2)
 # z = np.sqrt(xx**2 + yy**2)
+z = xx**2 + 1j*yy**2
 
 
 
